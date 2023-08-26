@@ -1,0 +1,31 @@
+body {
+    font-family: $ff-body;
+    font-weight: $fw-regular;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: $color-text-regular;
+}
+
+%heading {
+    font-weight: $fw-bold;
+    color: $color-heading-regular;
+    text-transform: uppercase;
+}
+
+h1 {
+    @extend %heading;
+    font-size: 4.8rem;
+    line-height: 4.8rem;
+}
+
+h2 {
+    @extend %heading;
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+}
+
+h3 {
+    @extend %heading;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+}
