@@ -1,0 +1,17 @@
+@import '../components/feature-card';
+
+.features {
+    display: grid;
+    row-gap: 6.4rem;
+
+    @include media-screen-min($bp-tablet) {
+        grid: repeat(2, 1fr) / repeat(2, 1fr);
+        row-gap: 7.2rem;
+        column-gap: 6.9rem;
+    }
+
+    @include media-screen-min($bp-desktop) {
+        grid: 1fr / repeat(4, 1fr);
+        column-gap: 3rem;
+    }
+}

@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6.4rem;
+
+    @include media-screen-min($bp-tablet) {
+        margin-bottom: 6.2rem;
+    }
+
+    @include media-screen-min($bp-desktop) {
+        margin-bottom: 8.3rem;
+    }
+
+}

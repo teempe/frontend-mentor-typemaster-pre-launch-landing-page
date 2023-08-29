@@ -1,0 +1,156 @@
+@import "../components/cta";
+
+.hero {
+    --num-of-rows: 4;
+    --img-border-radius: 2rem;
+
+    display: grid;
+    grid-template-rows: repeat(var(--num-of-rows), max-content);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "intro intro intro intro"
+        "imag1 imag1 imag1 imag1"
+        "imag2 imag3 imag3 imag3"
+        "descr descr descr descr";
+    gap: 2.4rem;
+
+    position: relative;
+
+    &__intro {
+        grid-area: intro;
+        justify-self: start;
+        align-self: center;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+
+        margin-bottom: 4rem;
+    }
+
+    &__image {
+        
+        &--1 {
+            grid-area: imag1;
+        }
+
+        &--2 {
+            grid-area: imag2;
+            transform: translateX(-4.8rem);
+            position: relative;
+            
+            &::after {
+                content: "";
+                background-color: $color-primary-200;
+                mix-blend-mode: multiply;
+                border-radius: var(--img-border-radius);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        &--3 {
+            grid-area: imag3;
+            justify-self: end;
+        }
+
+        & > img {
+            border-radius: var(--img-border-radius);
+        }
+    }
+
+    &__description {
+        grid-area: descr;
+        align-self: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.4rem;
+
+        text-align: center;
+        margin-top: 5.1rem;
+
+        & > .heading-2 {
+            max-width: 25.5rem;
+        }
+    }
+
+    @include media-screen-min($bp-tablet) {
+        --num-of-rows: 3;
+
+        grid-template-areas: 
+            "intro intro imag1 imag1"
+            "imag2 imag3 imag3 imag3"
+            "descr descr descr descr";
+        gap: 4rem;
+
+        &__intro {
+            max-width: 33.9rem;
+            margin-bottom: 0;
+        }
+    
+        &__image {    
+            &--2 {
+                transform: translateX(0);
+            }
+        }
+    
+        &__description {
+            flex-direction: row;
+            gap: 8.35rem;
+
+            text-align: left;
+            margin-top: 3.2rem;
+        }
+    }
+
+    @include media-screen-min($bp-desktop) {
+        --num-of-rows: 2;
+
+        grid-template-areas: 
+            "intro intro imag1 imag1"
+            "imag2 imag3 imag3 descr";
+        gap: 3rem;
+
+        &__intro {
+            max-width: 44.5rem;
+        }
+    
+        &__image {
+            &--3 {
+                justify-self: start;
+            }
+        }
+    
+        &__description {
+            flex-direction: column;
+            gap: 2.7rem;
+
+            margin-top: 0;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            width: 25.5rem;
+            height: 24rem;
+            background-image: url('../assets/shared/pattern-square.svg');
+            position: absolute;
+        }
+
+        &::before {
+            // square at top right corner
+            left: calc(100% + 3rem);
+        }
+
+        &::after {
+            // square at bottom left corner
+            bottom: 0;
+            right: calc(100% + 3rem);
+        }
+    }
+
+}

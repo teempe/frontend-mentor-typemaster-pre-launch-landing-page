@@ -1,0 +1,17 @@
+.main {
+    margin-bottom: 9.6rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 11.1rem;
+
+    @include media-screen-min($bp-tablet) {
+        margin-bottom: 14.2rem;
+        row-gap: 14.2rem;
+    }
+
+    @include media-screen-min($bp-desktop) {
+        margin-bottom: 12.8rem;
+        row-gap: 16.8rem;
+    }
+}

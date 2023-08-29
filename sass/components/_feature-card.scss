@@ -1,0 +1,42 @@
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+
+    text-align: center;
+
+    &__icon {
+        width: 6.5rem;
+        height: 6.5rem;
+        border-radius: 1.6rem;
+        background-color: $color-primary-200;
+        margin-bottom: 2.4rem;
+
+        display: grid;
+        place-content: center;
+    }
+
+    &__heading {
+        max-width: 60%;
+    }
+
+    @include media-screen-min($bp-tablet) {
+        align-items: flex-start;
+        text-align: left;
+
+        &__icon {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    @include media-screen-min($bp-desktop) {
+        &__icon {
+            margin-bottom: 2.4rem;
+        }
+
+        &__heading {
+            max-width: 70%;
+        }
+    }
+}

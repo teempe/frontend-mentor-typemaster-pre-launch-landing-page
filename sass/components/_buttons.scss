@@ -1,0 +1,28 @@
+.btn {
+    font-weight: $fw-semi-bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1.1rem 1.45rem;
+    border-radius: 0.8rem;
+    transition: background-color 0.25s ease-out;
+
+    &--primary {
+        color: $color-neutral-100;
+        background-color: $color-primary-200;
+
+        &:hover {
+            background-color: $color-primary-100;
+        }
+    }
+
+    &--secondary {
+        color: $color-heading-regular;
+        background-color: $color-neutral-200;
+
+        &:hover {
+            color: $color-neutral-100;
+            background-color: $color-heading-regular;
+        }
+    }
+}
