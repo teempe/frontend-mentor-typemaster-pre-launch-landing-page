@@ -117,6 +117,10 @@
 
         &__intro {
             max-width: 44.5rem;
+
+            & > p {
+                font-size: 1.8rem;
+            }
         }
     
         &__image {
